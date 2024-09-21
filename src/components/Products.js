@@ -3,7 +3,7 @@ import { addToCart } from "../redux/features/CartSlice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-const Products = ({ title, image }) => {
+const Products = ({ id, title, image }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -20,7 +20,7 @@ const Products = ({ title, image }) => {
       <img src={image} width={200} alt={title} />
       <button
         style={{ color: "green", width: "100px", fontSize: "20px" }}
-        onClick={() => dispatch(addToCart({ title, image }))}
+        onClick={() => dispatch(addToCart({ id, title, image }))}
       >
         Add
       </button>
